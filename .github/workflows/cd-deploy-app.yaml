@@ -1,0 +1,53 @@
+name: CD Deploy App
+
+on:
+  workflow_dispatch:
+    inputs:
+      awsAccountType:
+        description: "Select the AWS account type"
+        required: true
+        type: choice
+        options:
+          - "dev"
+          - "prod"
+      awsRegion:
+        description: "Select the AWS region"
+        required: true
+        type: choice
+        options:
+          - "us-east-1"
+          - "us-west-2"
+      awsProfile:
+        description: "Select the AWS profile"
+        required: true
+        type: choice
+        options:
+          - "default"
+          - "dev"
+          - "prod"
+  workflow_call:
+    inputs:
+      awsAccountType:
+        description: "Select the AWS account type"
+        required: true
+        type: choice
+        options:
+          - "dev"
+          - "prod"
+      awsRegion:
+        description: "Select the AWS region"
+        required: true
+        type: choice
+        options:
+          - "us-east-1"
+          - "us-west-2"
+      awsProfile:
+        description: "Select the AWS profile"
+        required: true
+        type: choice
+        options:
+          - "default"
+          - "dev"
+          - "prod"
+
+run-name: '[CD/M] Deploy App to ${inputs.awsAccountType} in ${inputs.awsRegion} with ${inputs.awsProfile}'
