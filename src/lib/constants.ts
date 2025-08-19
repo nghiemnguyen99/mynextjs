@@ -1,0 +1,1 @@
+export const TENANTS_TABLE = "nexa-op-devel-devel-s1-tenants";
